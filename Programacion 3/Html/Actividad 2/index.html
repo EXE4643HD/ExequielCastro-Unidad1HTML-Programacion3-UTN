@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web Personal</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-muted: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .bio {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: var(--text-color);
+            font-size: 1.05rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 1.2rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer p {
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Encabezado -->
+    <header>
+        <h1>Exequiel Castro</h1>
+        <p>Diseñador Web & Desarrollador Frontend</p>
+    </header>
+
+    <main>
+        <div class="profile-card">
+            <!-- 3. Imagen -->
+            <img class="profile-img" src="https://ms.yugipedia.com//thumb/f/f1/Declan-DGUpdate.png/386px-Declan-DGUpdate.png" alt="Fotografía de perfil de Exequiel Castro, Diseñador Web">
+
+            <!-- 2. Descripción personal -->
+            <section class="bio">
+                <p>
+                    ¡Hola! Soy Exequiel, un apasionado del diseño web y la tecnología con más de 5 años de experiencia creando experiencias digitales atractivas e intuitivas. Me especializo en transformar ideas complejas en interfaces limpias, funcionales y accesibles para todos los usuarios. En mi tiempo libre, me encanta explorar nuevas tendencias de diseño, colaborar en proyectos de código abierto y fotografiar paisajes urbanos.
+                </p>
+            </section>
+
+            <!-- 4. Enlace externo -->
+            <a class="social-link" href="https://github.com" target="_blank" rel="noopener noreferrer">
+                Visita mi perfil de GitHub
+            </a>
+        </div>
+    </main>
+
+    <!-- 5. Pie de página -->
+    <footer>
+        <p>&copy; 2025 - Exequiel Castro. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
