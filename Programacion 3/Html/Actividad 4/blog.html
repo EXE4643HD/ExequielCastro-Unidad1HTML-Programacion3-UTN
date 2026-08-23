@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Tecnología y Desarrollo Web</title>
+    <style>
+        :root {
+            --primary-color: #1a252f;
+            --accent-color: #2980b9;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        nav[aria-label="Navegación principal"] ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav[aria-label="Navegación principal"] a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav[aria-label="Navegación principal"] a:hover,
+        nav[aria-label="Navegación principal"] a:focus {
+            background-color: var(--accent-color);
+            outline: none;
+        }
+
+        .layout-container {
+            display: flex;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        main {
+            flex: 3;
+            outline: none;
+        }
+
+        main:focus {
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.4);
+            border-radius: 8px;
+        }
+
+        article {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        article h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        article p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        article ul, article ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        article li {
+            margin-bottom: 0.5rem;
+        }
+
+        aside {
+            flex: 1;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            height: fit-content;
+        }
+
+        aside h2 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.4rem;
+        }
+
+        aside ul {
+            list-style: none;
+        }
+
+        aside li {
+            margin-bottom: 0.8rem;
+        }
+
+        aside a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        aside a:hover, aside a:focus {
+            text-decoration: underline;
+            outline: none;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        footer h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            color: var(--text-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        thead {
+            background-color: var(--accent-color);
+            color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tbody tr:hover {
+            background-color: #edf2f7;
+        }
+
+        td {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 768px) {
+            .layout-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <header>
+        <h1>DevBlog: Tendencias e Innovación Web</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#inicio" aria-label="Ir a la página de Inicio">Inicio</a></li>
+                <li><a href="#articulos" aria-label="Ir a la sección de Artículos">Artículos</a></li>
+                <li><a href="#recursos" aria-label="Ir a la sección de Recursos">Recursos</a></li>
+                <li><a href="#contacto" aria-label="Ir a la sección de Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="layout-container">
+        <!-- 2. Main -->
+        <main tabindex="0" id="articulos" aria-label="Contenido principal del blog">
+            
+            <!-- Artículo 1 -->
+            <article>
+                <h2>Buenas Prácticas de Accesibilidad Web (a11y)</h2>
+                <p>
+                    La accesibilidad web garantiza que todas las personas, independientemente de sus capacidades físicas o cognitivas, puedan percibir, entender, navegar e interactuar con la web de manera efectiva.
+                </p>
+                <p>
+                    Para construir componentes accesibles, es clave seguir estándares como las pautas WCAG. Algunos aspectos esenciales incluyen:
+                </p>
+                <ul>
+                    <li>Uso correcto de etiquetas semánticas (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>).</li>
+                    <li>Asignación de atributos ARIA cuando el HTML nativo no sea suficiente.</li>
+                    <li>Navegación fluida y visible mediante el teclado usando atributos como <code>tabindex</code>.</li>
+                    <li>Contraste adecuado entre el texto y el fondo para facilitar la lectura.</li>
+                </ul>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article>
+                <h2>Introducción al Desarrollo Web Moderno</h2>
+                <p>
+                    El desarrollo frontend ha evolucionado significativamente. Hoy en día no solo nos enfocamos en la apariencia visual, sino también en el rendimiento, la mantenibilidad y la semántica del código.
+                </p>
+                <p>
+                    Pasos fundamentales para estructurar un proyecto web profesional:
+                </p>
+                <ol>
+                    <li>Definir la arquitectura HTML semántica.</li>
+                    <li>Aplicar estilos CSS modulares e higiénicos.</li>
+                    <li>Optimizar la carga de activos e imágenes.</li>
+                    <li>Garantizar la adaptabilidad del diseño (Responsive Design).</li>
+                </ol>
+            </article>
+
+        </main>
+
+        <!-- 3. Aside -->
+        <aside aria-label="Contenido relacionado y enlaces externos">
+            <h2>Recursos Relacionados</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/" target="_blank" rel="noopener noreferrer" aria-label="Visitar MDN Web Docs (se abre en nueva pestaña)">MDN Web Docs</a></li>
+                <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" rel="noopener noreferrer" aria-label="Consultar los estándares WCAG de la W3C (se abre en nueva pestaña)">Estándares WCAG - W3C</a></li>
+                <li><a href="https://web.dev/" target="_blank" rel="noopener noreferrer" aria-label="Explorar tutoriales en web.dev (se abre en nueva pestaña)">web.dev por Google</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- 4. Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <h2>Directorio de Contacto del Equipo</h2>
+            
+            <div class="table-responsive">
+                <table>
+                    <caption>Información de contacto de los administradores del blog</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Cargo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Exequiel Castro</td>
+                            <td>exequiel.castro@ejemplo.com</td>
+                            <td>Editor Jefe</td>
+                        </tr>
+                        <tr>
+                            <td>Carlos Gómez</td>
+                            <td>carlos.gomez@ejemplo.com</td>
+                            <td>Desarrollador Frontend</td>
+                        </tr>
+                        <tr>
+                            <td>Lucía Fernández</td>
+                            <td>lucia.fernandez@ejemplo.com</td>
+                            <td>Especialista en UX/a11y</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DevBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

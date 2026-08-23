@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #cccccc;
+            --focus-color: #2980b9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 2.5rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label.main-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--focus-color);
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .options-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.3rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+        }
+
+        .option-item input {
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.9rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--focus-color);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.99);
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h2>Formulario de Registro</h2>
+
+        <form action="#" method="POST">
+
+            <!-- 1. Nombre completo -->
+            <div class="form-group">
+                <label for="nombre" class="main-label">Nombre completo *</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    required 
+                    placeholder="Ej: Exequiel Castro" 
+                    tabindex="1"
+                >
+            </div>
+
+            <!-- 2. Correo electrónico -->
+            <div class="form-group">
+                <label for="email" class="main-label">Correo electrónico *</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    placeholder="Ej: exequiel@ejemplo.com" 
+                    tabindex="2"
+                >
+            </div>
+
+            <!-- 3. Contraseña -->
+            <div class="form-group">
+                <label for="password" class="main-label">Contraseña *</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    placeholder="Mínimo 8 caracteres" 
+                    minlength="8" 
+                    tabindex="3"
+                >
+            </div>
+
+            <!-- 4. Selección de género -->
+            <div class="form-group">
+                <span class="main-label">Selección de género</span>
+                <div class="options-group">
+                    <label for="genero-masculino" class="option-item">
+                        <input type="radio" id="genero-masculino" name="genero" value="masculino" tabindex="4"> Masculino
+                    </label>
+                    <label for="genero-femenino" class="option-item">
+                        <input type="radio" id="genero-femenino" name="genero" value="femenino" tabindex="5"> Femenino
+                    </label>
+                    <label for="genero-otro" class="option-item">
+                        <input type="radio" id="genero-otro" name="genero" value="otro" tabindex="6"> Otro
+                    </label>
+                </div>
+            </div>
+
+            <!-- 5. Intereses -->
+            <div class="form-group">
+                <span class="main-label">Intereses</span>
+                <div class="options-group">
+                    <label for="interes-musica" class="option-item">
+                        <input type="checkbox" id="interes-musica" name="intereses" value="musica" tabindex="7"> Música
+                    </label>
+                    <label for="interes-deporte" class="option-item">
+                        <input type="checkbox" id="interes-deporte" name="intereses" value="deporte" tabindex="8"> Deporte
+                    </label>
+                    <label for="interes-lectura" class="option-item">
+                        <input type="checkbox" id="interes-lectura" name="intereses" value="lectura" tabindex="9"> Lectura
+                    </label>
+                    <label for="interes-tecnologia" class="option-item">
+                        <input type="checkbox" id="interes-tecnologia" name="intereses" value="tecnologia" tabindex="10"> Tecnología
+                    </label>
+                </div>
+            </div>
+
+            <!-- 7. País -->
+            <div class="form-group">
+                <label for="pais" class="main-label">País</label>
+                <select id="pais" name="pais" tabindex="11">
+                    <option value="" disabled selected>Selecciona un país</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="chile">Chile</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="mexico">México</option>
+                    <option value="espana">España</option>
+                </select>
+            </div>
+
+            <!-- 6. Comentarios adicionales -->
+            <div class="form-group">
+                <label for="comentarios" class="main-label">Comentarios adicionales</label>
+                <textarea 
+                    id="comentarios" 
+                    name="comentarios" 
+                    placeholder="Escribe aquí tus comentarios o dudas..." 
+                    tabindex="12"
+                ></textarea>
+            </div>
+
+            <!-- 8. Botón de envío -->
+            <div class="form-group">
+                <input 
+                    type="submit" 
+                    value="Registrarse" 
+                    class="submit-btn" 
+                    tabindex="13"
+                >
+            </div>
+
+        </form>
+    </main>
+
+</body>
+</html>
