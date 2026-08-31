@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 - Unidad 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. Introducción a CSS -->
+    <section>
+        <h1>Introducción a CSS</h1>
+        <p>CSS (Cascading Style Sheets) es un lenguaje de diseño que se utiliza para definir la presentación visual de un documento HTML. Sirve para controlar el color, la tipografía, la disposición y el aspecto general de los elementos en una página web.</p>
+    </section>
+
+    <!-- 2. Selectores en CSS -->
+    <section>
+        <h2>Selectores</h2>
+        <p>Este es un párrafo estilizado por su etiqueta (tag).</p>
+        <p class="mi-clase">Este es un párrafo estilizado usando una clase (class).</p>
+        <p id="mi-id">Este es un párrafo estilizado usando un identificador único (id).</p>
+    </section>
+
+    <!-- 3. Modificación de Texto -->
+    <section>
+        <h1 class="titulo-sombra">Título con Sombra y Mayúsculas</h1>
+        <p class="texto-espaciado">Este párrafo tiene un interlineado amplio y un espaciado entre letras grande para apreciar las propiedades de texto en CSS.</p>
+        <blockquote class="cita">"El diseño no es solo lo que se ve y lo que se siente. El diseño es cómo funciona." - Steve Jobs</blockquote>
+    </section>
+
+    <!-- 4. Modelo de Caja & 6. Variables CSS -->
+    <section>
+        <h2>Tarjeta de Perfil</h2>
+        <div class="tarjeta">
+            <div class="cuadrado"></div>
+            <h3>Tarjeta de Perfil</h3>
+            <p>Esta tarjeta muestra border, padding, margin, background-color, border-radius y box-shadow.</p>
+        </div>
+    </section>
+
+    <!-- 5. Display y Visibility -->
+    <section>
+        <h2>Galería de Tarjetas y Visibilidad</h2>
+        
+        <!-- Cambiar la clase del contenedor para probar los estados del punto 5:
+             - contenedor-block
+             - contenedor-inline
+             - contenedor-inline-block -->
+        <div class="galeria contenedor-inline-block">
+            <div class="tarjeta">
+                <div class="cuadrado"></div>
+                <h3>Tarjeta 1</h3>
+                <p>Ejemplo de galería.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="cuadrado"></div>
+                <h3>Tarjeta 2</h3>
+                <p>Ejemplo de galería.</p>
+            </div>
+            <div class="tarjeta">
+                <div class="cuadrado"></div>
+                <h3>Tarjeta 3</h3>
+                <p>Ejemplo de galería.</p>
+            </div>
+        </div>
+
+        <div class="demostración-visibilidad">
+            <button class="btn-none">Botón Display None</button>
+            <button class="btn-hidden">Botón Visibility Hidden</button>
+            <p><strong>Diferencia entre display: none y visibility: hidden:</strong> <code>display: none</code> oculta el elemento por completo y elimina el espacio que ocupaba en el maquetado. En cambio, <code>visibility: hidden</code> oculta el elemento de la vista, pero conserva exactamente el mismo espacio físico que ocupaba en la estructura HTML.</p>
+        </div>
+    </section>
+
+</body>
+</html>

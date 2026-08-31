@@ -1,0 +1,280 @@
+/* === Bloque 2: Reset y variables === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f8fafc;
+    --panel: #fff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --primary: #2563eb;
+    --primary-600: #1d4ed8;
+    --primary-700: #1e40af;
+    --accent: #16a34a;
+    --danger: #dc2626;
+    --radius: 14px;
+    --shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+    --container: 1100px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+}
+
+/* === Layout general === */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.section {
+    margin-bottom: var(--space-8);
+}
+
+.section__title {
+    margin-bottom: var(--space-4);
+    font-size: 1.5rem;
+}
+
+.panel {
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: var(--space-6);
+    box-shadow: var(--shadow);
+}
+
+.code-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-4);
+}
+
+/* === Bloque 2: Header responsivo === */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 100;
+    margin-bottom: var(--space-8);
+}
+
+.site-header__container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.site-header__mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    font-weight: 800;
+}
+
+.site-header__checkbox {
+    display: none;
+}
+
+.site-header__btn {
+    display: none;
+    cursor: pointer;
+}
+
+.site-header__nav {
+    display: flex;
+    gap: var(--space-6);
+}
+
+.site-header__link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.site-header__link:hover {
+    color: var(--primary);
+}
+
+/* Header Mobile */
+@media (max-width: 768px) {
+    .site-header__btn {
+        display: block;
+    }
+
+    .site-header__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--panel);
+        flex-direction: column;
+        padding: var(--space-4);
+        box-shadow: var(--shadow);
+    }
+
+    .site-header__checkbox:checked ~ .site-header__nav {
+        display: flex;
+    }
+}
+
+/* === Bloque 3: Sistema de Botones === */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 40px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+    text-decoration: none;
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+.btn--primary:hover {
+    background-color: var(--primary-600);
+}
+
+.btn--secondary {
+    background-color: #e2e8f0;
+    color: var(--text);
+}
+.btn--secondary:hover {
+    background-color: #cbd5e1;
+}
+
+.btn--outline {
+    background-color: transparent;
+    border-color: #cbd5e1;
+    color: var(--text);
+}
+.btn--outline:hover {
+    background-color: #f1f5f9;
+}
+
+.btn--danger {
+    background-color: var(--danger);
+    color: #fff;
+}
+.btn--danger:hover {
+    background-color: #b91c1c;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* === Bloque 4: Tarjeta de Producto === */
+.product-card {
+    max-width: 380px;
+}
+
+.product-card__media {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #f1f5f9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: var(--space-4);
+}
+
+/* Uso de object-fit para ajustar la imagen dentro de su contenedor */
+.product-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-card__badge {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    background-color: #f59e0b;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: var(--space-1) var(--space-2);
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.product-card__title {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+}
+
+.product-card__description {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-4);
+}
+
+.product-card__price-box {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.product-card__price {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.product-card__old-price {
+    color: var(--muted);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}

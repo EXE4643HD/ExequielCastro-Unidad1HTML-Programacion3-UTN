@@ -1,0 +1,111 @@
+/* 6. Variables CSS */
+:root {
+    --color-fondo: #f4f4f9;
+    --color-texto: #222222;
+    --color-acento: #3498db;
+}
+
+/* Para cambiar de tema rápido, descomenta las siguientes líneas: */
+/*
+:root {
+    --color-fondo: #2c3e50;
+    --color-texto: #ecf0f1;
+    --color-acento: #e74c3c;
+}
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: var(--color-texto);
+    padding: 20px;
+}
+
+/* 2. Selectores */
+p {
+    color: #555555;
+}
+
+.mi-clase {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+#mi-id {
+    color: #8e44ad;
+    font-style: italic;
+}
+
+/* 3. Modificación de Texto */
+.titulo-sombra {
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    color: var(--color-texto);
+}
+
+.texto-espaciado {
+    line-height: 2.2;
+    letter-spacing: 3px;
+}
+
+.cita {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    border-left: 4px solid var(--color-acento);
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+/* 4. Modelo de Caja y Explicación box-sizing */
+/*
+  EXPLICACIÓN BOX-SIZING:
+  - content-box (por defecto): El ancho y alto indicados aplican solo al contenido.
+    El padding y el border se SUMAN al tamaño total del elemento.
+  - border-box: El ancho y alto indicados incluyen el contenido, el padding y el border.
+    El tamaño total no se altera al agregar bordes o rellenos, lo que facilita el maquetado.
+*/
+.tarjeta {
+    box-sizing: border-box;
+    width: 250px;
+    padding: 15px;
+    margin: 15px;
+    border: 2px solid var(--color-acento);
+    background-color: var(--color-fondo);
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    color: var(--color-texto);
+}
+
+.cuadrado {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-acento);
+    border-radius: 4px;
+}
+
+/* 5. Display y Visibility */
+
+/* c. Aplica display: block a las tarjetas */
+.contenedor-block .tarjeta {
+    display: block;
+}
+
+/* d. Aplica display: inline (las tarjetas pierden el ancho/alto definido en el box model) */
+.contenedor-inline .tarjeta {
+    display: inline;
+}
+
+/* e. Aplica display: inline-block (se alinean horizontalmente conservando el box model) */
+.contenedor-inline-block .tarjeta {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* f. Visibilidad y despliegue */
+.btn-none {
+    display: none;
+}
+
+.btn-hidden {
+    visibility: hidden;
+}
