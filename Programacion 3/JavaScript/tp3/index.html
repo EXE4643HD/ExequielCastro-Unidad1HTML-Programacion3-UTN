@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico - JS, DOM y Eventos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        section { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
+        .resaltado { color: #2563eb; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Punto 6: Manipulación básica del DOM -->
+    <section>
+        <h1 id="titulo-principal">Título Inicial del Trabajo</h1>
+        <ul id="lista-elementos">
+            <li>Elemento base 1</li>
+            <li>Elemento base 2</li>
+        </ul>
+    </section>
+
+    <!-- Punto 7: Eventos click e input -->
+    <section>
+        <h3>Punto 7: Evento Click e Input</h3>
+        <input type="text" id="input-punto7" placeholder="Escribe algo...">
+        <button id="btn-punto7">Agregar a la lista</button>
+    </section>
+
+    <!-- Punto 8: Evento submit y preventDefault -->
+    <section>
+        <h3>Punto 8: Formulario y preventDefault</h3>
+        <form id="formulario-p8">
+            <input type="text" id="input-p8" placeholder="Dato del formulario...">
+            <button type="submit">Enviar Formulario</button>
+        </form>
+        <p id="mensaje-p8"></p>
+    </section>
+
+    <!-- Punto 9: Eventos keydown y change -->
+    <section>
+        <h3>Punto 9: Keydown y Change</h3>
+        <p>Escribe en el siguiente input y presiona Enter:</p>
+        <input type="text" id="input-enter" placeholder="Presiona Enter aquí...">
+        <br><br>
+        <label for="select-colores">Elige un color:</label>
+        <select id="select-colores">
+            <option value="">Selecciona...</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Verde">Verde</option>
+            <option value="Azul">Azul</option>
+        </select>
+        <p id="resultado-select"></p>
+    </section>
+
+    <!-- Vinculación del script -->
+    <script src="index.js"></script>
+</body>
+</html>
